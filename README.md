@@ -1,8 +1,13 @@
-# React + Vite
+## Exploring complicated behaviour of reset API of react-hook-form library.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Objective 
+When the 'documentType' input filed changes, only the 'documentNumber' must be reset to the specified value.
 
-Currently, two official plugins are available:
+#### Problem statement 
+When the 'documentType' changes, infinite trigger of useEffect hook causes infinite re-rendering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Solution - 1 : 
+Using 'getValues' function to not change 'documentType' when resetting but same problem occured when not using without React.Strictmode.
+
+#### Solution - 2 : 
+Using 'getValues' to not change 'documentType' when resetting + using it along with 'useRef' hook to store 'documentType' value and use it in the if statement to compare new and prev value, then only move to the reset API.
