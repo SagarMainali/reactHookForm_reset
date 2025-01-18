@@ -38,11 +38,13 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit(data => console.log(data))} style={{ display: "flex", flexDirection: 'column', rowGap: "10px", width: "300px" }}>
+      
       <select {...register('documentType')}>
         <option value="d1">d1</option>
         <option value="d2">d2</option>
         <option value="d3">d3</option>
       </select>
+
       {documentType === 'd1' &&
         <input type="text" {...register('d1_no')} placeholder="d1_no" />
       }
@@ -56,6 +58,7 @@ function App() {
       <input type="text" {...register('documentNumber')} placeholder="doc num" />
 
       <button type="submit">send</button>
+      
     </form>
   )
 }

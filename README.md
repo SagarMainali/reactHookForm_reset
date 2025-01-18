@@ -1,7 +1,7 @@
 ## Exploring complicated behaviour of reset API of react-hook-form library.
 
 #### Objective 
-When the 'documentType' input filed changes, only the 'documentNumber' must be reset to the specified value.
+When the 'documentType' input field changes, only the 'documentNumber' must be reset to the specified value.
 
 #### Problem statement 
 When the 'documentType' changes, infinite trigger of useEffect hook causes infinite re-rendering.
